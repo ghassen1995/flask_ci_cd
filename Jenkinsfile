@@ -11,13 +11,6 @@ stages {
 	}
 	}
 
-	stage('Test') {
-	steps {
-		sh 'python3 test_app.py'
-		input(id: "Deploy Gate", message: "Deploy ${params.project_name}?", ok: 'Deploy')
-	}
-	}
-
 	stage('Deploy')
 	{
 	steps {
